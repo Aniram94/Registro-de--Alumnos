@@ -27,6 +27,7 @@ var router = express.Router();
 var path = require('path');
 
 var usuarios = require('./api/usuarios');
+var usuarios = require('./api/Alumno');
 
 router.get('/', function (req, res) {
     res.redirect(path.join(__dirname, 'public', 'index.html'));
@@ -37,5 +38,11 @@ router.get('/api/usuarios/:id', usuarios.get);
 router.post('/api/usuarios', usuarios.create);
 router.put('/api/usuarios', usuarios.edit);
 router.delete('/api/usuarios/:id', usuarios.destroy);
+
+router.get('/api/Alumno', usuarios.getAll);
+router.get('/api/Alumno/:id', usuarios.get);
+router.post('/api/Alumno', usuarios.create);
+router.put('/api/Alumno', usuarios.edit);
+router.delete('/api/Alumno/:id', usuarios.destroy);
 
 module.exports = router;
