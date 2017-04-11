@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
-<html data-ng-app="base.fballina" data-ng-cloak>
+<html data-ng-app="base.Alumnos" data-ng-cloak>
     <head>
         <title>{{title}}</title>
         <meta charset="UTF-8">
@@ -33,7 +33,7 @@ THE SOFTWARE.
     <body ng-controller="UsersController">
         <div class="container">
             <div class="jumbotron text-center">
-                <h1>Total de usuarios registrados <span class="label label-info">{{ users.length}}</span></h1>
+                <h1>Total de alumnos registrados <span class="label label-info">{{ users.length}}</span></h1>
                 <button type="submit" class="btn btn-primary btn-lg" ng-click="get()">Cargar usuarios</button>
             </div>
 
@@ -42,7 +42,7 @@ THE SOFTWARE.
 
                     <div class="checkbox" ng-repeat="item in users">
                         <label>
-                            <input type="checkbox" ng-click="remove(item)"> {{ item.nombre}} {{item.paterno}} {{item.materno}}
+                            <input type="checkbox" ng-click="remove(item)"> {{item.numero}} {{item.alumno}} {{item.matricula}} {{item.carrera}}
                         </label>
                     </div>
 
@@ -52,16 +52,22 @@ THE SOFTWARE.
             <div id="todo-form" class="row">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="user.nombre">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg text-center" placeholder="Paterno" ng-model="user.paterno">
+                            <input type="text" class="form-control input-lg text-center" placeholder="Numero" ng-model="user.numero">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg text-center" placeholder="Materno" ng-model="user.materno">
+                            <input type="text" class="form-control input-lg text-center" placeholder="Alumno" ng-model="user.alumno">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg id-center" placeholder="Matricula" ng-model="user.matricula">
+                        </div>
+                            <input type="text" class="form-control input-lg text-center" placeholder="Carrera" ng-model="user.carrera">
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg" ng-click="create(user)">Agregar</button>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="create(user)">Borrar Alumno</button>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="create(user)">Borrar Alumnos</button>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="create(user)">Mostrar Alumnos</button>
                     </form>
                 </div>
             </div>
