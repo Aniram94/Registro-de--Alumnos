@@ -23,7 +23,7 @@
  */
 
 'use strict';
-var app = angular.module('base.fballina', []);
+var app = angular.module('base.Alumnos', []);
 
 app.controller('UsersController', ['$scope', '$http',
     function ($scope, $http) {
